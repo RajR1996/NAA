@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome Admin</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Html.ActionLink("Create Role", "CreateRole", new { controller = "User", action = "CreateRole", })</td>
+            <td>Create a Role</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Get Users", "GetUsers", new { controller = "User", action = "GetUsers", })</td>
+            <td>Get a list of all Users</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Get Roles", "GetRoles", new { controller = "User", action = "GetRoles", })</td>
+            <td>Get all Roles</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Manage User Roles", "ManageUserRoles", new { controller = "User", action = "ManageUserRoles", })</td>
+            <td>Manage Users Roles - Edit their permissions</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Get User Roles", "GetRolesForUser", new { controller = "User", action = "GetRolesForUser", })</td>
+            <td>Get Users Roles - View their permissions</td>
+        </tr>
+    </tbody>
+</table>
+
+@*<p>
+    @Html.ActionLink("Create Role", "CreateRole", new { controller = "User", action = "CreateRole", }) |
+    @Html.ActionLink("Get Users", "GetUsers", new { controller = "User", action = "GetUsers", }) |
+    @Html.ActionLink("Get Roles", "GetRoles", new { controller = "User", action = "GetRoles", }) |
+    @Html.ActionLink("Manage User Roles", "ManageUserRoles", new { controller = "User", action = "ManageUserRoles", }) |
+    @Html.ActionLink("Get User Roles", "GetRolesForUser", new { controller = "User", action = "GetRolesForUser", }) |
+</p>*@

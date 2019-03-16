@@ -1,0 +1,49 @@
+﻿@model IEnumerable<UniversityCourses.Sheffield.SSheffCourse>
+
+@{
+    ViewBag.Title = "ViewSheffCoursesShort";
+}
+
+<h2>ViewSheffCoursesShort</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryReq)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        ViewBag.CourseName = item.Name;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntryReq)
+            </td>
+            <td>
+                @*@Html.ActionLink("Details", "GetSheffCourseInfo", new { controller="UniversityCourses", CourseId = item.Name }) |*@
+                @Html.ActionLink("Apply", "CreateApplication", new { controller = "Admin", action = "CreateApplication", CourseName = item.Name, ApplicantId = ViewBag.ApplicantId, UniversityId = ViewBag.UniversityId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+@Html.ActionLink("Back to Universities", "GetUniversities", new { controller = "University", action = "GetUniversities", ApplicantId = ViewBag.ApplicantId })

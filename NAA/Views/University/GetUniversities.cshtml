@@ -1,0 +1,45 @@
+﻿@model IEnumerable<NAA.Data.University>
+
+@*@{
+        ViewBag.Title = "GetUniversities";
+    }*@
+
+<h2>GetUniversities</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UniversityName)
+        </th>
+        <th>Apply</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        {
+            ViewBag.Title = "GetUniversities";
+            ViewBag.UniversityId = item.UniversityId;
+        }
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityName)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.UniversityId }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.UniversityId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.UniversityId })*@
+
+                @Html.ActionLink("View Courses", "GetUniversityCoursesShort", new { controller = "UniversityCourses", UniversityId = item.UniversityId, ApplicantId = ViewBag.ApplicantId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Back to My Applications", "GetMyApplications", new { controller = "Application", action = "GetMyApplications", ApplicantId = ViewBag.ApplicantId }) |
+@Html.ActionLink("Back to Profile", "GetProfile", new { controller = "Profile", id = ViewBag.ApplicantId })

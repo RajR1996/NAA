@@ -1,0 +1,84 @@
+﻿@model IEnumerable<NAA.Data.BEANS.GetMyApplicationsBEAN>
+
+@{
+    ViewBag.Title = "GetMyApplications";
+}
+
+<h2>GetMyApplications</h2>
+
+<p>
+    @Html.ActionLink("Create Application", "GetUniversities", new { controller = "University", action = "GetUniversities", ApplicantId = ViewBag.ApplicantId })
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+                @Html.DisplayNameFor(model => model.ApplicationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicantId)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UniversityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UniversityOffer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Firm)
+        </th>
+        <th>
+            Details
+        </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ApplicationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantId)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityOffer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firm)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "GetOneApplication", new { ApplicationId = item.ApplicationId })
+            </td>
+            <td>
+                @if ((item.UniversityOffer == "C") || (item.UniversityOffer == "U"))
+                {
+                    @Html.ActionLink("Firm", "EditApplication", new { controller = "Admin", ApplicationId = item.ApplicationId })
+                }
+            </td>
+            <td>
+                @if (item.UniversityOffer == "P")
+                {
+                    @Html.ActionLink("Delete", "DeleteApplication", new { controller = "Admin", ApplicationId = item.ApplicationId })
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Back to Profile", "GetProfile", new { controller = "Profile", action = "GetProfile", id = ViewBag.ApplicantId })

@@ -1,0 +1,67 @@
+﻿@model NAA.Data.Profile
+
+@{
+    ViewBag.Title = "GetProfile";
+    ViewBag.ApplicantId = Model.ApplicantId;
+}
+
+@*<h2>GetProfile</h2>*@
+<h2>Welcome to your profile, @Html.DisplayFor(model => model.ApplicantName)!</h2>
+
+<div>
+    <h4>View Profile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        @* Commented out because this information does not need to be seen *@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.UserId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserId)
+            </dd>*@
+
+    </dl>
+</div>
+
+
+<p>
+    @*@Html.ActionLink("Create New Profile", "CreateProfile", new { controller = "Admin", action = "CreateProfile" }, new { @class = "btn btn-default" }) |*@
+    @Html.ActionLink("Edit Profile", "EditProfile", new { controller = "Admin", action = "EditProfile", id = Model.ApplicantId }, new { @class = "btn btn-default" }) |
+    @Html.ActionLink("View My Applications", "GetMyApplications", new { controller = "Application", action = "GetMyApplications", ApplicantId = Model.ApplicantId }, new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Create Application", "GetUniversities", new { controller = "University", action = "GetUniversities", ApplicantId = Model.ApplicantId }, new { @class = "btn btn-default" })
+
+</p>

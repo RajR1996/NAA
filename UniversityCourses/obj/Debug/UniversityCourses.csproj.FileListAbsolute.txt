@@ -1,0 +1,14 @@
+\\studenthome.hallam.shu.ac.uk\STUDENTHOME8\8\b4025068\MyWork\NAA\NAA\NAA\UniversityCourses\bin\Debug\UniversityCourses.dll.config
+\\studenthome.hallam.shu.ac.uk\STUDENTHOME8\8\b4025068\MyWork\NAA\NAA\NAA\UniversityCourses\bin\Debug\UniversityCourses.dll
+\\studenthome.hallam.shu.ac.uk\STUDENTHOME8\8\b4025068\MyWork\NAA\NAA\NAA\UniversityCourses\bin\Debug\UniversityCourses.pdb
+\\studenthome.hallam.shu.ac.uk\STUDENTHOME8\8\b4025068\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.csprojAssemblyReference.cache
+\\studenthome.hallam.shu.ac.uk\STUDENTHOME8\8\b4025068\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.csproj.CoreCompileInputs.cache
+\\studenthome.hallam.shu.ac.uk\STUDENTHOME8\8\b4025068\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.dll
+\\studenthome.hallam.shu.ac.uk\STUDENTHOME8\8\b4025068\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.pdb
+F:\MyWork\NAA\NAA\NAA\UniversityCourses\bin\Debug\UniversityCourses.dll.config
+F:\MyWork\NAA\NAA\NAA\UniversityCourses\bin\Debug\UniversityCourses.dll
+F:\MyWork\NAA\NAA\NAA\UniversityCourses\bin\Debug\UniversityCourses.pdb
+F:\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.csprojAssemblyReference.cache
+F:\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.csproj.CoreCompileInputs.cache
+F:\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.dll
+F:\MyWork\NAA\NAA\NAA\UniversityCourses\obj\Debug\UniversityCourses.pdb

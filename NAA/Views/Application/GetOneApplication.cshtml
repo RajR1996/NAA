@@ -1,0 +1,90 @@
+﻿@model NAA.Data.Application
+
+@{
+    ViewBag.Title = "GetOneApplication";
+}
+
+<h2>GetOneApplication</h2>
+
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ApplicantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.UniversityId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UniversityId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalStatement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonalStatement)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.TeachReference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeachReference)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherContactDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherContactDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UniversityOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UniversityOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Firm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firm)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if ((Model.UniversityOffer == "U") || (Model.UniversityOffer == "C"))
+    {
+        @Html.ActionLink("Firm", "EditApplication", new { controller = "Admin", action = "EditApplication", ApplicationId = Model.ApplicationId })
+    }
+    |
+    @Html.ActionLink("Back to All Applications", "GetMyApplications", new { controller = "Application", action = "GetMyApplications", ApplicantId = Model.ApplicantId }) |
+    @if (Model.UniversityOffer == "P")
+    {
+        @Html.ActionLink("Delete Application", "DeleteApplication", new { controller = "Admin", action = "DeleteApplication", ApplicationId = Model.ApplicationId })
+    }
+</p>

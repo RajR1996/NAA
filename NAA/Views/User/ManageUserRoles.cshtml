@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ManageUserRoles";
+}
+
+<h2>Manage User Roles</h2>
+
+@using (Html.BeginForm("ManageUserRoles", "User"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        <label for="UserName">Username</label>
+        @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...", new { @class = "form-control" })
+
+    </div>
+
+    <div class="form-group">
+        <label for="RoleName">Role Name</label>
+        @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...", new { @class = "form-control" })
+    </div>
+
+    @*<p>
+            UserName: @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
+            Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+        </p>*@
+
+    <input type="submit" class="btn btn-success" value="Save" />
+}
+
+

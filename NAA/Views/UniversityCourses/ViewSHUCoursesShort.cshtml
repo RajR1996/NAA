@@ -1,0 +1,61 @@
+﻿@model IEnumerable<UniversityCourses.SHU.SHUCourseShort>
+
+@{
+    ViewBag.Title = "ViewSHUCoursesShort";
+}
+
+<h2>ViewSHUCoursesShort</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRequirements)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CDegree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTarif)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        ViewBag.CourseName = item.CName;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRequirements)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CDegree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CTarif)
+            </td>
+            <td>
+                @*@Html.ActionLink("Details", "GetSHUCourseInfo", new { controller="UniversityCourses", CourseId = item.CourseId }) |*@
+                @Html.ActionLink("Apply", "CreateApplication", new { controller = "Admin", action = "CreateApplication", CourseName = item.CName, ApplicantId = ViewBag.ApplicantId, UniversityId = ViewBag.UniversityId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+@Html.ActionLink("Back to Universities", "GetUniversities", new { controller = "University", action = "GetUniversities", ApplicantId = ViewBag.ApplicantId })
